@@ -87,6 +87,7 @@ jobs:
             ${{ runner.os }}-gradle
       - name: Assemble Android ${{ env.BUILD_TYPE }}
         run: |
+          sudo chmod +x android
           sudo apt install -y ruby-bundler
           cd android
           bundle update
