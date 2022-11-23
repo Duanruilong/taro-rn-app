@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up NodeJS
         uses: actions/setup-node@v3
@@ -48,7 +48,7 @@ jobs:
           node-version: "16.17.1"
 
       - name: Cache node_modules Folder
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ github.workspace }}/node_modules
           key: ${{ runner.os }}-node_modules
@@ -57,7 +57,7 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Cache Yarn
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: yarn-cache
         with:
@@ -77,7 +77,7 @@ jobs:
           name: taro-android-bundle
           path: ${{ github.workspace }}/android/app/src/main/assets/index.android.bundle
       - name: Cache Gradle
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: gradle-cache
         with:
@@ -98,12 +98,3 @@ jobs:
         with:
           name: app-${{ env.BUILD_TYPE }}
           path: ${{ github.workspace }}/android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
-      - name: Upload release assets
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          prerelease: ${{ contains(github.ref, 'beta') }}
-          files: |
-            android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
