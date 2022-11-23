@@ -14,9 +14,9 @@ on:
 # 工作流环境变量
 env:
   # 应用的application_id
-  APP_ID: com.tarodemo
+  APP_ID: com.taro-rn
   # 应用名称
-  APP_NAME: Taro Demo
+  APP_NAME: Taro-rn-app
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
