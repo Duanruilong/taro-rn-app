@@ -41,6 +41,12 @@ jobs:
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.17.1"
+
       - name: Cache node_modules Folder
         uses: actions/cache@v2
         with:
