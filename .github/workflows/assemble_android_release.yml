@@ -10,13 +10,12 @@ on:
     branches: [ master ]
 
   workflow_dispatch:
-
 # 工作流环境变量
 env:
   # 应用的application_id
-  APP_ID: com.taro-rn
+  APP_ID: com.flower
   # 应用名称
-  APP_NAME: Taro-App
+  APP_NAME: 花卉管理
   # 应用icon
   APP_ICON: ic_launcher
   # 应用圆角icon
