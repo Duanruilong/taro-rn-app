@@ -39,6 +39,12 @@ jobs:
     steps:
       - name: Checkout Project
         uses: actions/checkout@v2
+
+      - name: Set up NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.17.1"
+
       - name: Cache node_modules Folder
         uses: actions/cache@v2
         with:
@@ -81,7 +87,7 @@ jobs:
         run: |
           # sudo chown -R /android/gradlew
           sudo apt install -y ruby-bundler
-          sudo chown -R android
+          sudo chown -R ${{ github.workspace }}/android/gradlew
           cd android
           bundle update
           bundle exec fastlane assemble
