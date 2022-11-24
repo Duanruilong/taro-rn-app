@@ -14,17 +14,15 @@ on:
 # 工作流环境变量
 env:
   # 应用的application_id
-  APP_ID: com.taro-rn
+  APP_ID: com.flower
   # 应用名称
-  APP_NAME: Taro-App
-  # 应用支持的CPU架构
-  APP_ABI_FILTERS: armeabi-v7a, arm64-v8a
+  APP_NAME: 测试app
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
   VERSION_NAME: 1.0.0
   # 版本号
-  VERSION_CODE: 10
+  VERSION_CODE: 100
   # 密钥库文件
   KEYSTORE_FILE: debug.keystore
   # 密钥库口令
@@ -34,22 +32,15 @@ env:
   # 密钥库别名口令
   KEYSTORE_KEY_PASSWORD: android
 
-
 # 工作流作业
 jobs:
   assemble:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
-        uses: actions/checkout@v3
-
-      - name: Set up NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16.17.1"
-
+        uses: actions/checkout@v2
       - name: Cache node_modules Folder
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         with:
           path: ${{ github.workspace }}/node_modules
           key: ${{ runner.os }}-node_modules
@@ -58,7 +49,7 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
       - name: Cache Yarn
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         env:
           cache-name: yarn-cache
         with:
@@ -66,7 +57,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-       - name: Install Dependencies
+      - name: Install Dependencies
         run: |
           yarn
       - name: Build Taro React Native Bundle
@@ -78,7 +69,7 @@ jobs:
           name: taro-android-bundle
           path: ${{ github.workspace }}/android/app/src/main/assets/index.android.bundle
       - name: Cache Gradle
-        uses: actions/cache@v3
+        uses: actions/cache@v2
         env:
           cache-name: gradle-cache
         with:
