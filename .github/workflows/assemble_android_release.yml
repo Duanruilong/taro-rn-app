@@ -87,7 +87,7 @@ jobs:
         run: |
           # sudo chown -R /android/gradlew
           sudo apt install -y ruby-bundler
-          sudo chown -R ${{ github.workspace }}/android/gradlew
+          sudo chmod 777 ${{ github.workspace }}/android/gradlew
           cd android
           bundle update
           bundle exec fastlane assemble
