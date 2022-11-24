@@ -1,0 +1,98 @@
+// upgrade
+.upgrade {
+    height: 700px;
+    position: relative;
+
+    &-clo {
+        position: absolute;
+        bottom: -100px;
+        left: 50%;
+        margin-left: -45px;
+        height: 90px;
+        width: 90px;
+    }
+
+    &-img {
+        height: 700px;
+
+    }
+
+    &-ver {
+        position: absolute;
+        top: 100px;
+        left: 130px;
+        font-size: 38px;
+        color: #fdfdfd;
+    }
+
+    &-cent {
+        width: 100%;
+        height: 140px;
+        padding: 0 60px;
+        position: absolute;
+        top: 300px;
+        left: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &-li {
+
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            &-n {
+                width: 16px;
+                height: 16px;
+                border-radius: 20px;
+                background-color: #555555;
+                margin-right: 10px;
+            }
+
+            &-t {
+                font-size: 30px;
+                color: #555555;
+            }
+        }
+
+        &-but {
+            margin-top: 20px;
+            width: 100%;
+
+            &-t {
+                font-size: 36px;
+                color: #ffffff;
+                line-height: 78px;
+            }
+        }
+
+        &-tip {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 24px;
+            width: 90%;
+            position: relative;
+
+            &-img {
+                width: 80px;
+                height: 80px;
+                position: absolute;
+                top: -14;
+                left: 0;
+            }
+
+            &-t {
+                font-size: 26px;
+                color: #575757;
+                width: 86%;
+                text-align: left;
+                margin-left: 60px;
+                line-height: 32px;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.index {
+    background-color: #edecee;
+
+    @import './index.rn.scss';
+
+    &-l {
+        height: calc(100vh - 262px) !important;
+
+        &-load {
+
+            padding: 20px;
+            font-size: 24px;
+            color: #707070;
+
+            &-img {
+                height: 60px !important;
+                width: 180px;
+            }
+        }
+
+    }
+
+    &-score-item-lf-cent-info {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
+    &-title-add {
+        line-height: 60px !important;
+    }
+}
+
+page {
+    background-color: #edecee;
+}

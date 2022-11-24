@@ -1,0 +1,32 @@
+.user {
+    background-color: #edecee;
+    @import './index.rn.scss';
+
+    &-info {
+        height: 200PX;
+        // background-color: $color-brand;
+        background-image: url(../../assets/use_back.png);
+        background-size: cover;
+
+    }
+
+
+
+    .user-info-center-name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .user-list {
+        height: calc(100vh - 490px);
+    }
+
+    .y-title-task {
+        margin-bottom: 10px;
+    }
+}
+
+page {
+    background-color: #edecee;
+}

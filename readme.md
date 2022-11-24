@@ -1,4 +1,4 @@
-React Native Template for Taro
+React Native Template for Taro v3.5.7
 ====
 
 

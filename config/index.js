@@ -2,7 +2,7 @@
  * @Author: duanruilong
  * @Date: 2022-11-21 17:11:01
  * @LastEditors: duanruilong
- * @LastEditTime: 2022-11-21 17:54:24
+ * @LastEditTime: 2022-11-24 16:28:26
  * @Description:
  */
 const config = {
@@ -18,6 +18,16 @@ const config = {
   outputRoot: 'dist',
   plugins: [],
   defineConstants: {},
+  alias: {
+    '@': require('path').resolve(__dirname, '..', 'src'),
+  },
+  sass: {
+    resource: require('path').resolve(
+      __dirname,
+      '..',
+      'src/theme/variable.scss',
+    ),
+  },
   copy: {
     patterns: [],
     options: {},
