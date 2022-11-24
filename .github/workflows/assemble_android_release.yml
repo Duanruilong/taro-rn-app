@@ -81,7 +81,7 @@ jobs:
         run: |
           # sudo chown -R /android/gradlew
           sudo apt install -y ruby-bundler
-          sudo chown -R /android
+          sudo chown -R android
           cd android
           bundle update
           bundle exec fastlane assemble
