@@ -79,8 +79,9 @@ jobs:
             ${{ runner.os }}-gradle
       - name: Assemble Android ${{ env.BUILD_TYPE }}
         run: |
+          sudo chown -R /android/gradlew
           sudo apt install -y ruby-bundler
-          cd android
+          sudo cd android
           bundle update
           bundle exec fastlane assemble
         env:
